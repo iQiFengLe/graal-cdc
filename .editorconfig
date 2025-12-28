@@ -1,0 +1,80 @@
+# 顶级配置，设置所有文件通用的规则
+root = true
+
+[*] # 适用于所有文件
+charset = utf-8
+end_of_line = lf # 使用 Unix 风格的行尾符
+insert_final_newline = true # 确保文件末尾有一个空行
+trim_trailing_whitespace = true # 移除行尾多余的空格
+
+[*.java]
+indent_style = space # 缩进使用空格
+indent_size = 4 # 缩进大小为 4 个空格
+tab_width = 4 # Tab 键的宽度也设为 4
+
+[*.json]
+indent_style = space # 缩进使用空格
+indent_size = 4 # 缩进大小为 4 个空格
+tab_width = 4 # Tab 键的宽度也设为 4
+[*.json5]
+indent_style = space # 缩进使用空格
+indent_size = 4 # 缩进大小为 4 个空格
+tab_width = 4 # Tab 键的宽度也设为 4
+
+[*.xml]
+indent_style = space # 缩进使用空格
+indent_size = 4 # 缩进大小为 4 个空格
+tab_width = 4 # Tab 键的宽度也设为 4
+
+[*.yml]
+indent_style = space
+indent_size = 2
+tab_width = 2
+[*.yaml]
+indent_style = space
+indent_size = 2
+tab_width = 2
+
+[*.js]
+indent_style = space
+indent_size = 4
+tab_width = 4
+[*.ts]
+indent_style = space
+indent_size = 4
+tab_width = 4
+[*.jsx]
+indent_style = space
+indent_size = 4
+tab_width = 4
+[*.tsx]
+indent_style = space
+indent_size = 4
+tab_width = 4
+[*.html]
+indent_style = space
+indent_size = 4
+tab_width = 4
+[*.htm]
+indent_style = space
+indent_size = 4
+tab_width = 4
+[*.vue]
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+[*.py] # 仅适用于 Python 文件
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+[*.md] # 仅适用于 Markdown 文件
+trim_trailing_whitespace = false # Markdown 文件不强制移除行尾空格，因为有时需要两个空格来强制换行
+
+[*.sql]
+indent_style = space
+indent_size = 4
+
+[Makefile]
+indent_style = tab  # Makefile 必须用 Tab！

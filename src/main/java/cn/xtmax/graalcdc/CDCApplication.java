@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2025/12/27 19:50
  */
 @SpringBootApplication
-
 public class CDCApplication {
 
 

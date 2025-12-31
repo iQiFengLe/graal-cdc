@@ -4,6 +4,7 @@ import cn.xtmax.graalcdc.DbType;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -41,7 +42,30 @@ public class ListenDatabaseInstanceConfig {
     // 密码
     private String password;
 
+    // 服务ID mysql用
+    private int serverId;
+
     public String uniqueKey(){
-        return dbType.getValue() + ":" + host + ":" + port + "@" + username + ":" + password;
+        return dbType.getValue() + ":" + host + ":" + port + "@" + username + ":" + password + "#" + serverId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ListenDatabaseInstanceConfig that = (ListenDatabaseInstanceConfig) o;
+        return port == that.port
+            && Objects.equals(name, that.name)
+            && dbType == that.dbType
+            && Objects.equals(databases, that.databases)
+            && Objects.equals(tables, that.tables)
+            && Objects.equals(host, that.host)
+            && Objects.equals(username, that.username)
+            && Objects.equals(password, that.password)
+            && serverId == that.serverId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, dbType, databases, tables, host, port, username, password, serverId);
     }
 }

@@ -1,5 +1,6 @@
 package cn.xtmax.graalcdc.config;
 
+import cn.xtmax.graalcdc.WatchFile;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -16,5 +17,10 @@ public class BasicConfig {
     @Bean
     public WebClient webClient(){
         return WebClient.builder().build();
+    }
+
+    @Bean
+    public WatchFile watchFile(){
+        return new WatchFile();
     }
 }

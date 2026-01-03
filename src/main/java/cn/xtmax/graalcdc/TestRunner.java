@@ -12,7 +12,7 @@ import java.util.Set;
  * 类说明
  *
  * @author 起风了
- * @mail m.zxt@foxmail.com
+ * @email m.zxt@foxmail.com
  * @date 2025/12/29 14:43
  */
 @Component

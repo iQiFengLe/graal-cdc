@@ -10,7 +10,7 @@ import java.util.concurrent.*;
  * 文件监听
  *
  * @author 起风了
- * @mail m.zxt@foxmail.com
+ * @email m.zxt@foxmail.com
  * @date 2025/12/29 09:30
  */
 public class WatchFile implements AutoCloseable {

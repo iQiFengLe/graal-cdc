@@ -2,14 +2,9 @@ package cn.xtmax.graalcdc;
 
 import cn.xtmax.graalcdc.config.ListenDatabaseInstanceConfig;
 import cn.xtmax.graalcdc.config.SystemConfig;
-import com.alibaba.fastjson2.JSON;
-import com.alibaba.fastjson2.JSONObject;
 import io.debezium.engine.ChangeEvent;
 import io.debezium.engine.DebeziumEngine;
 import io.debezium.engine.format.Json;
-import net.openhft.chronicle.queue.ChronicleQueue;
-import net.openhft.chronicle.queue.RollCycles;
-import net.openhft.chronicle.queue.impl.single.SingleChronicleQueueBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -39,8 +34,8 @@ public class DebeziumEngineManager {
     @Autowired
     SystemConfig systemConfig;
 
-    @Autowired
-    DebeziumEngineRecordHandler recordHandler;
+//    @Autowired
+//    DebeziumEngineRecordHandler recordHandler;
 
     private Item createEngine(ListenDatabaseInstanceConfig databaseInstanceConfig) {
         DbType dbType = databaseInstanceConfig.getDbType();
@@ -131,8 +126,9 @@ public class DebeziumEngineManager {
         DebeziumEngine<ChangeEvent<String, String>> engine =
             DebeziumEngine.create(Json.class)
                 .using(props)
-                .notifying(v -> recordHandler.handle(databaseInstanceConfig, v))
+//                .notifying(v -> recordHandler.handle(databaseInstanceConfig, v))
                 .build();
+
 
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         executorService.submit(engine);

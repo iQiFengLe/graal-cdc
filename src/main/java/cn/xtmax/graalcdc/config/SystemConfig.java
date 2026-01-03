@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * 系统配置
  *
  * @author 起风了
- * @mail m.zxt@foxmail.com
+ * @email m.zxt@foxmail.com
  * @date 2025/12/29 09:26
  */
 @Component
